@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import { getConnection } from "./db.js";
 import usersRoutes from "./routes/users.routes.js";
@@ -8,6 +9,7 @@ import usersRoutes from "./routes/users.routes.js";
 dotenv.config();
 
 const app = express();
+app.use(cors());
 
 
 // Middlewares
